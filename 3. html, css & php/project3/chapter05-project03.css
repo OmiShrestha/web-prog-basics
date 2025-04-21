@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+
+/* Example: set up CSS variables for easy reuse (optional) */
+:root {
+  --red:     #e63946; /* NEW */
+  --offWhite:#f1faee; /* NEW */
+  --pastel:  #a8dadc; /* NEW */
+  --blue:    #457b9d; /* NEW */
+  --navy:    #1d3557; /* NEW */
+}
+
+/* general text formatting */
+
+h1,
+h2,
+h3,
+nav,
+footer {
+  font-family: Lobster, Cambria, "Times New Roman", serif;
+}
+
+body {
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+  font-size: 100%;
+  background-color: var(--offWhite);
+}
+
+
+/* header and navigation */
+
+header,
+footer {
+  color: white;
+  background-color: var(--navy);
+  margin: 0em 4em 0.25em 4em;
+  padding: 0.5rem; /* Adjust as desired (e.g., 1rem, 2rem, etc.) */
+
+}
+
+header h1 {
+  padding: 0.5rem 0 0 1.25rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--red);
+}
+
+header p {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 0 0 0 1.25rem;
+}
+
+
+/* main article styling */
+main {
+  background-color: white;
+  margin: 1em 4em 1em 4em;
+  padding: 1em;
+}
+
+section {
+  margin-bottom: 1em;
+  padding: 0;
+  width: 100%;
+}
+
+
+legend {
+  font-size: 1.35rem;
+  background-color: #7986CB;
+  height: 1.70rem;
+  color: #E8EAF6;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+  background: linear-gradient(to right, var(--blue), var(--navy));
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  background-color: #C5CAE9;
+  width: 100%;
+  border: none;
+}
+
+form p {
+  margin-top: 0.5em;
+}
+
+/* Add subtle borders and spacing to the table cells */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /* Ensure table uses full width */
+  margin-bottom: 1rem;
+}
+
+table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  vertical-align: top;
+  /* Ensures labels stay top-aligned with inputs */
+}
+
+/* Give the fieldset a more defined border and subtle drop shadow */
+fieldset {
+  border: 2px solid #9FA8DA;
+  border-radius: 6px;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the buttons with a standout background and hover effect */
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--red);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #c02936; /* a slightly darker shade of #e63946 */
+  /* Slightly darker shade on hover */
+}
+
+/* 1. Highlight focused form elements */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #3F51B5;
+  /* accent color */
+  box-shadow: 0 0 6px rgba(63, 81, 181, 0.4);
+  transition: box-shadow 0.2s ease;
+}
+
+/* 2. Add a gradient to the legend background and round corners */
+legend {
+  background: linear-gradient(to right, #7986CB, #333f84);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  /* improved spacing inside legend */
+}
+
+/* 3. Create zebra striping for table rows */
+table tr:nth-child(even) td {
+  background-color: #EDE7F6;
+}
+
+/* 4. Slight raise effect on button hover */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}

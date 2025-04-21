@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Chapter 5 Project 3</title>
+   <link rel="stylesheet" href="reset.css" />
+   <link rel="stylesheet" href="chapter05-project03.css" />
+</head>
+
+<body>
+   <header>
+      <h1>Share Your Travels</h1>
+      <p>Let Us Know Where You've Been</p>
+   </header>
+   <main>
+      <section>
+         <form action="http://www.randyconnolly.com/tests/process.php" method="post">
+            <fieldset>
+               <legend>Photo Details</legend>
+               <table>
+                  <tr>
+                     <td><label for="title">Title:</label></td>
+                     <td>
+                        <input type="text" id="title" name="title" placeholder="Give your photo a title" />
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td><label for="photo">Upload Photo:</label></td>
+                     <td>
+                        <input type="file" id="photo" name="photo" accept="image/*" />
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td><label for="email">Your Email:</label></td>
+                     <td>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td><label for="description">Description:</label></td>
+                     <td>
+                        <textarea id="description" name="description"
+                           placeholder="Add a short description..."></textarea>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><label for="continent">Continent:</label></td>
+                     <td>
+                        <select id="continent" name="continent">
+                           <option value="">Choose Continent</option>
+                           <option value="Africa">Africa</option>
+                           <option value="Asia">Asia</option>
+                           <option value="Europe">Europe</option>
+                           <option value="North America">North America</option>
+                           <option value="South America">South America</option>
+                           <option value="Oceania">Oceania</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><label for="country">Country:</label></td>
+                     <td>
+                        <select id="country" name="country">
+                           <option value="">Choose Country</option>
+                           <option value="Canada">Canada</option>
+                           <option value="United States">United States</option>
+                           <option value="Mexico">Mexico</option>
+                           <!-- etc. -->
+                        </select>
+                     </td>
+                  </tr>
+                  <!-- <tr>
+                     <td><label for="city">City:</label></td>
+                     <td>
+                        <input type="text" id="city" name="city" placeholder="Enter city name" />
+                     </td>
+                  </tr> -->
+
+                  <!-- Replace the existing City row with this snippet -->
+                  <tr>
+                     <td><label for="city">City:</label></td>
+                     <td>
+                        <input type="text" list="citylist" id="city" name="city" placeholder="Enter city name" />
+                        <datalist id="citylist">
+                           <option value="Toronto">
+                           <option value="London">
+                           <option value="Paris">
+                           <option value="Sydney">
+                              <!-- etc. -->
+                        </datalist>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td>Copyright:</td>
+                     <td>
+                        <input type="radio" id="allRights" name="copyright" value="1" checked>
+                        <label for="allRights">All rights reserved</label><br>
+                        <input type="radio" id="creativeCommons" name="copyright" value="2">
+                        <label for="creativeCommons">Creative Commons</label>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Creative Commons Types:</td>
+                     <td>
+                        <input type="checkbox" id="attr" name="cc[]" value="1">
+                        <label for="attr">Attribution</label><br>
+                        <input type="checkbox" id="noncomm" name="cc[]" value="3">
+                        <label for="noncomm">Noncommercial</label><br>
+                        <input type="checkbox" id="noDeriv" name="cc[]" value="5">
+                        <label for="noDeriv">No Derivative Works</label>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><label for="accept">I accept the software license:</label></td>
+                     <td>
+                        <input type="checkbox" id="accept" name="accept" />
+                     </td>
+                  </tr>
+
+                  <!-- <tr>
+                     <td><label for="rate">Rate this photo:</label></td>
+                     <td>
+                        <input type="number" id="rate" name="rate" min="1" max="5" />
+                     </td>
+                  </tr> -->
+
+                  <tr>
+                     <td><label for="popularity">Popularity (0-10):</label></td>
+                     <td>
+                        <input type="range" id="popularity" name="popularity" min="0" max="10" value="5" />
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td><label for="color">Color Collection:</label></td>
+                     <td>
+                        <input type="color" id="color" name="color" value="#000000" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><label for="date">Date Taken:</label></td>
+                     <td>
+                        <input type="date" id="date" name="date" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><label for="time">Time Taken:</label></td>
+                     <td>
+                        <input type="time" id="time" name="time" />
+                     </td>
+                  </tr>
+               </table>
+            </fieldset>
+            <p>
+               <input type="submit" value="Submit" />
+               <input type="reset" value="Clear Form" />
+            </p>
+         </form>
+      </section>
+   </main>
+</body>
+
+</html>

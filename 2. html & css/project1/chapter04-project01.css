@@ -1,0 +1,137 @@
+/* Author: Omi Shrestha */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: #fefae0;
+}
+
+/* Headings - Sans-serif Stack */
+h1, h2, h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #606c38;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Links & Hover Effects */
+a {
+    color: #00B0FF;
+    text-decoration: none;
+    padding: 0.2em 0.4em;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #525c30;
+    color: white;
+}
+
+/* Header & Footer Styling */
+header, footer {
+    background-color: #A4C3B2;
+    color: white;
+    margin: 0 4em 0.25em 4em;
+    padding: 1.5em;
+    border-radius: 0.5em;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5em;
+    list-style: none;
+}
+
+/* Related Photos Section */
+.related-photos {
+    display: flex;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+
+.related-photos img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Reviews Section */
+section div {
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #E8EAF6;
+    border-radius: 0.5em;
+}
+
+hr {
+    margin: 1.5em 0;
+    border: 1px solid #C5CAE9;
+}
+
+/* Footer Text */
+footer p {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Apply fonts to specific elements */
+	body {
+		background-color: #fefae0; 
+		margin: 0; 
+		max-width: 1200px;
+		padding: 20px;
+	  }
+	h1 {
+		font-family: 'Montserrat', serif;
+		font-size: 2.5em;
+		color: #606c38;
+	  }
+	h2 {
+		font-family: 'Expletus Sans', serif;
+		font-size: 2em;
+		color: #606c38;
+	  }
+	h3 {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5em;
+		color: #606c38;
+	  }
+	p {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1em;
+		color: #2c3e50;
+	  }
+	nav a {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		color: #283618;
+		text-decoration: underline;
+	  }
+	nav a:hover {
+		text-decoration: underline;
+	  }
+	footer p {
+		font-family: 'Pacifico', cursive;
+		font-size: 1em;
+		color: #7f8c8d;
+	}
+	.related-photos {
+	   display: flex;
+	   gap: 10px;
+	   margin: 15px 0;
+	}
+	.related-photos figure {
+	   margin: 0;
+	}
+	.image-enlarged {
+		
+	}

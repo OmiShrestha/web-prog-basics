@@ -1,0 +1,9 @@
+/* Author: Omi Shrestha */
+
+html, body, header, footer, main, nav, article, section, figure, figcaption, ul, li, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+
+    <title>Chapter 5 Project 1</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="preload" href="chapter05-project01.css" as="style" onload="this.rel='stylesheet'">
+
+    <noscript>
+    <link rel="stylesheet" href="chapter05-project01.css">
+    </noscript>
+
+</head>
+
+<body>
+
+    <section>
+        <h3>Data</h3>
+        <table>
+            <caption>Orders</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Country</th>
+                    <th>Progress</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123</td>
+                    <td>Sep 12, 2017</td>
+                    <td>Jean Rousseau</td>
+                    <td>France</td>
+                    <td><progress value="100" max="100"></progress></td>
+                    <td><span class="status status-shipped">Shipped</span></td>
+                </tr>
+                <tr>
+                    <td>149</td>
+                    <td>Sep 20, 2017</td>
+                    <td>Georg Hegel</td>
+                    <td>Germany</td>
+                    <td><progress value="100" max="100"></progress></td>
+                    <td><span class="status status-shipped">Shipped</span></td>
+                </tr>
+                <tr>
+                    <td>144</td>
+                    <td>Oct 3, 2017</td>
+                    <td>John Locke</td>
+                    <td>England</td>
+                    <td><progress value="50" max="100"></progress></td>
+                    <td><span class="status status-processing">Processing</span></td>
+                </tr>
+                <tr>
+                    <td>162</td>
+                    <td>Oct 8, 2017</td>
+                    <td>Thomas Hobbes</td>
+                    <td>England</td>
+                    <td><progress value="25" max="100"></progress></td>
+                    <td><span class="status status-pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>177</td>
+                    <td>Oct 10, 2017</td>
+                    <td>Johann Fichte</td>
+                    <td>Germany</td>
+                    <td><progress value="25" max="100"></progress></td>
+                    <td><span class="status status-pending">Pending</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Revise</h3>
+        <form method="get" action="http://www.randyconnolly.com/tests/process.php">
+            <fieldset>
+                <legend>Filter Orders</legend>
+
+                <!-- Customer field -->
+                <label for="customer">Customer</label>
+                <input type="text" id="customer" name="client" placeholder="Enter name" required>
+
+                <!-- Phone field -->
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., 555-123-4567" pattern="^\d{3}-\d{3}-\d{4}$"
+                    required>
+
+                <!-- Country field -->
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="">Choose a country</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="England">England</option>
+                </select>
+
+                <!-- Status radio buttons -->
+                <fieldset>
+                    <legend>Status</legend>
+                    <input type="radio" name="type" id="pending" value="pending">
+                    <label for="pending">Pending</label>
+                    <input type="radio" name="type" id="processing" value="processing">
+                    <label for="processing">Processing</label>
+                    <input type="radio" name="type" id="shipped" value="shipped">
+                    <label for="shipped">Shipped</label>
+                </fieldset>
+
+                <label for="date">Order Date</label>
+                <input type="date" id="date" name="date" min="2023-01-01" max="2025-12-31">
+
+                <!-- A notes textarea -->
+                <label for="notes">Additional Comments</label> <!-- ← added -->
+                <textarea id="notes" name="comments" rows="3" cols="40"
+                    placeholder="Enter any other details here..."></textarea> <!-- ← added -->
+
+                <!-- A checkbox to sign up for notifications -->
+                <input type="checkbox" id="notify" name="notify" value="yes"> <!-- ← added -->
+                <label for="notify">Notify me about order updates</label> <!-- ← added -->
+
+                <br>
+
+                <!-- A date input for a simpler user experience -->
+                <label for="shipdate">Desired Shipping Date</label> <!-- ← added -->
+                <input type="date" id="shipdate" name="shipdate"> <!-- ← added -->
+
+                <!-- Reset button -->
+                <input type="reset" value="Reset">
+
+                <!-- Submit button -->
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </section>
+
+</body>
+
+</html>

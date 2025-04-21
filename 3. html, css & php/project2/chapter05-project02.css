@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+/* general text formatting */
+
+h1,
+h2,
+h3,
+nav,
+footer {
+   font-family: 'Merriweather', serif;
+}
+
+body {
+   font-family: 'Open Sans', Arial, sans-serif;
+   font-size: 16px;
+}
+
+legend {
+   background-color: #616161;
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 4px;
+   background: linear-gradient(to right, #616161, #8a8a8a);
+   border: 2px solid #444;   /* optional: subtle border */
+}
+
+fieldset {
+   margin: 1em auto;
+   background-color: #F5F5F5;
+   border-radius: 5px;
+   padding: 1em;
+}
+
+div#searchBox,
+div#settingsBox,
+div#paintingBox {
+   margin: 0.25em auto;
+   background-color: #E0E0E0;
+   border: 1pt solid #616161;
+   background: linear-gradient(to bottom, #E0E0E0, rgba(6, 60, 102, 0.639));
+
+
+}
+
+div#searchBox {
+   margin-top: 1em;
+}
+
+div#artistBox {
+   background-color: #EEEEEE;
+
+}
+
+table thead {
+   background-color: #E0E0E0;
+   background-image: linear-gradient(to bottom, rgba(6, 60, 102, 0.639), #CCCCCC);
+}
+
+caption {
+   background-color: #BDBDBD;
+}
+
+/* Make the table fill its container and collapse extra space */
+div#paintingBox table {
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+div#paintingBox table tbody tr:hover {
+   cursor: pointer;
+   background-color: rgba(36, 13, 10, 0.039);
+   color: #333;
+}
+
+/* Give cells some padding and optional border for clarity */
+div#paintingBox table th,
+div#paintingBox table td {
+   padding: 0.5em;
+   border: 1px solid #CCC;
+   text-align: center;
+}
+
+/* If desired, specify column widths (e.g., narrower for select, year, etc.) */
+div#paintingBox table th:nth-of-type(1) {
+   /* "Select" column */
+   width: 5%;
+}
+
+div#paintingBox table th:nth-of-type(2) {
+   /* Title column */
+   width: 25%;
+}
+
+div#paintingBox table th:nth-of-type(3) {
+   /* Artist column */
+   width: 20%;
+}
+
+div#paintingBox table th:nth-of-type(4) {
+   /* Year column */
+   width: 10%;
+}
+
+div#paintingBox table th:nth-of-type(5) {
+   /* Genre column */
+   width: 15%;
+}
+
+div#paintingBox table th:nth-of-type(6) {
+   /* Actions column */
+   width: 25%;
+}
+
+/* Button images could also be given a bit of space or a hover effect */
+button img {
+   width: 20px;
+   height: 20px;
+   vertical-align: middle;
+   margin-right: 2px;
+}
+
+button:hover {
+   background-color: #e0e0e0;  /* subtle highlight on hover */
+   border-radius: 4px;         /* optional rounded button corners */
+}
+
+/* Apply these properties to <td> (and/or <th>) you want NOT to wrap */
+div#paintingBox table th,
+div#paintingBox table td {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 0.5em;
+   border: 1px solid #CCC;
+   text-align: left;
+}

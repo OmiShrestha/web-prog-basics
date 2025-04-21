@@ -1,0 +1,190 @@
+/* Author: Omi Shrestha */
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+   /* General body styles */
+   body {
+      font-family: "Alegreya Sans", sans-serif;
+      color: #333; /* Dark gray font color */
+      background: #f4f4f4 url("images/moroccan-flower.png") repeat;
+      background-color: #f4f4f4; /* Light gray background */
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+   }
+
+    /* Header styles */
+   header {
+      background-color: #0078d7; /* Blue background */
+      color: white; /* White font color */
+      padding: 10px 20px;
+      text-align: center;
+   }
+
+   header h2 {
+      margin: 0;
+   }
+
+   header nav ul {
+      list-style-type: none;
+      padding: 0;
+   }
+
+   header nav ul li {
+      display: inline;
+      margin-right: 15px;
+   }
+
+   header nav ul li a {
+      color: white; /* White font color for links */
+      text-decoration: none;
+   }
+
+   /* 3) Add the :hover styling for your nav links: */
+    header nav ul li a:hover {
+    color: #03A9F4;
+    background-color: #000;
+    }
+
+   /* Main content styles */
+   main {
+      padding: 20px;
+   }
+
+   article h1 {
+      color: #0078d7; /* Blue font color */
+   }
+
+   section h2, section h3 {
+      color: #005a9e; /* Darker blue font color */
+   }
+
+    /* Profile Picture Section */
+    #photo {
+      float: left; /* Float the photo section to the left */
+      width: 30%; /* Adjust the width as needed */
+      margin-right: 20px; /* Add some space between the photo and the text */
+      margin-bottom: 20px; /* Add some space below the photo */
+   }
+
+   #photo img {
+      width: 100%; /* Make the image responsive within its container */
+      height: auto; /* Maintain aspect ratio */
+   }
+
+   #photo figcaption {
+      font-size: 15px;
+      text-align: center; /* Center the caption */
+      margin-top: 10px; /* Add some space between the image and the caption */
+   }
+
+   /* Personal Data section styles */
+   #personal dl {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+   }
+
+   #personal dt, #personal dd {
+      margin: 0;
+      padding: 0;
+   }
+
+   #personal dt::after {
+      content: ":";
+      margin-right: 5px;
+   }
+
+   #personal dd::after {
+      content: ";";
+      margin-right: 10px;
+   }
+
+   #personal dd:last-child::after {
+      content: ""; /* Remove semicolon after the last item */
+   }
+
+   /* Inventory Section */
+   #inventory {
+      clear: both;       /* Forces this section to start below floats */
+      margin-top: 20px; /* Add some space above the section */
+   }
+
+   #inventory h3 {
+      text-align: left; /* Align the heading to the left */
+      margin-bottom: 20px; /* Add space below the heading */
+   }
+
+   #inventory figure {
+      display: inline-block; /* Display figures inline */
+      width: 30%; /* Set a width for each figure */
+      margin: 0 1.5%; /* Add some margin between figures */
+      text-align: center; /* Center the content within each figure */
+   }
+
+   #inventory img {
+      height: auto; /* Maintain aspect ratio */
+   }
+
+   #inventory figcaption {
+      font-style: italic;
+      color: #555; /* Gray font color */
+      margin-top: 10px; /* Add space between image and caption */
+      padding: 10px;
+   }
+
+   /* Footer styles */
+   footer {
+      background-color: #333; /* Dark background */
+      color: white; /* White font color */
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 15px; /* Add some space above the footer */
+      font-size: 15px; /* Increase the base font size */
+   }
+
+   footer a {
+      color: #0078d7; /* Blue font color for links */
+      text-decoration: none;
+   }
+
+   footer a:hover {
+      text-decoration: underline;
+   }
+
+   /* Image and figure styles */
+   figure {
+      margin: 0;
+      text-align: center;
+   }
+
+   figcaption {
+      font-style: italic;
+      color: #555; /* Gray font color */
+   }
+
+   /* Link styles */
+   a {
+      color: #0078d7; /* Blue font color for links */
+      text-decoration: none;
+   }
+
+   a:hover {
+      text-decoration: underline;
+   }
+
+   /* Add this snippet anywhere in your CSS (e.g., near other link styles) */
+    a[href^="mailto"] {
+        background: url("images/email.png") no-repeat 0 3px;
+        padding-left: 1em;
+    }
+  
+    a[href^="tel"] {
+        background: url("images/call.png") no-repeat 0 3px;
+        padding-left: 1em;
+    }
+  

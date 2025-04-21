@@ -1,0 +1,518 @@
+/* 
+   ──────────────────────────────────────────────────────────────────
+   GLOBAL BACKGROUND & BASE ANIMATIONS
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Global body background */
+body {
+  /* Subtle animated gradient background */
+  background: linear-gradient(120deg, #ECEFF1 0%, #CFD8DC 50%, #B0BEC5 100%);
+  background-size: 300% 300%;
+  animation: gradientScroll 12s ease infinite;
+  font-family: 'Roboto', sans-serif; /* MDL uses Roboto, so let's stay consistent */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Gently scroll the background gradient */
+@keyframes gradientScroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   BODY OVERLAYS (Shimmer, Confetti, Stars, etc.)
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Existing subtle “shimmer” overlay behind everything */
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%),
+    radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+  background-repeat: repeat;
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
+  opacity: 0.1;
+  mix-blend-mode: screen; /* or lighten, if you prefer */
+  animation: shimmerOverlay 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes shimmerOverlay {
+  0% {
+    background-position: 0 0, 50px 50px;
+  }
+  50% {
+    background-position: 50px 50px, 0 0;
+  }
+  100% {
+    background-position: 0 0, 50px 50px;
+  }
+}
+
+/* 
+   OPTIONAL: Twinkling starfield effect behind the shimmer 
+   (if you really want to go all-out).
+   Warning: This can be visually busy if combined with shimmer. 
+   Uncomment if you want star mania:
+*/
+/*
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background: transparent url("data:image/svg+xml,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
+    <circle cx='2' cy='2' r='2' fill='white'/>\
+  </svg>") repeat 0 0;
+  background-size: 10px 10px;
+  opacity: 0.05;
+  animation: starScroll 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes starScroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200px, -200px);
+  }
+}
+*/
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   GLOBAL PAGE FADE-IN & BASIC LAYOUT STYLES
+   ──────────────────────────────────────────────────────────────────
+*/
+
+html {
+  opacity: 0;
+  animation: fadeInPage 1s ease forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keep your original .content spacing */
+.content {
+  padding: 8px;
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   HEADER TITLE & GLITCH OPTION
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Header Title area */
+.mdl-layout-title {
+  font-size: 36px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  position: relative;
+  /* Animated color gradient border at the bottom */
+  border-bottom: 2px solid transparent;
+  background-image: linear-gradient(to right, #FF6E40, #FF3D00);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.5s ease;
+}
+
+.mdl-layout-title:hover {
+  /* Expand the bottom gradient border on hover */
+  background-size: 100% 2px;
+}
+
+/* Emphasize the <strong> within the title */
+.mdl-layout-title > strong {
+  color: #FF6E40;
+  font-weight: 400;
+  letter-spacing: 1px;
+  /* Optional subtle glow around text */
+  text-shadow: 0 0 4px rgba(255, 110, 64, 0.4);
+}
+
+/* 
+   OPTIONAL: "Glitch" effect for the title text. 
+   1) Add a class .glitch to .mdl-layout-title in your HTML 
+      if you want to see it in action.
+*/
+.mdl-layout-title.glitch {
+  position: relative;
+  color: #FF6E40; /* your desired primary color */
+}
+.mdl-layout-title.glitch::before,
+.mdl-layout-title.glitch::after {
+  content: attr(data-text); /* replicate the same text from the element */
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #FF3D00;
+  clip: rect(0, 900px, 0, 0);
+}
+.mdl-layout-title.glitch::before {
+  text-shadow: 2px 0 #FF4081;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+.mdl-layout-title.glitch::after {
+  text-shadow: -2px 0 #7C4DFF;
+  animation: glitchBottom 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(10px, 9999px, 60px, 0);
+  }
+  20% {
+    clip: rect(5px, 9999px, 40px, 0);
+  }
+  30% {
+    clip: rect(15px, 9999px, 65px, 0);
+  }
+  40% {
+    clip: rect(10px, 9999px, 30px, 0);
+  }
+  50% {
+    clip: rect(25px, 9999px, 80px, 0);
+  }
+  60% {
+    clip: rect(0px, 9999px, 40px, 0);
+  }
+  70% {
+    clip: rect(10px, 9999px, 80px, 0);
+  }
+  80% {
+    clip: rect(5px, 9999px, 40px, 0);
+  }
+  90% {
+    clip: rect(25px, 9999px, 60px, 0);
+  }
+  100% {
+    clip: rect(10px, 9999px, 70px, 0);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip: rect(40px, 9999px, 100px, 0);
+  }
+  10% {
+    clip: rect(5px, 9999px, 60px, 0);
+  }
+  20% {
+    clip: rect(15px, 9999px, 80px, 0);
+  }
+  30% {
+    clip: rect(0, 9999px, 35px, 0);
+  }
+  40% {
+    clip: rect(10px, 9999px, 80px, 0);
+  }
+  50% {
+    clip: rect(20px, 9999px, 60px, 0);
+  }
+  60% {
+    clip: rect(10px, 9999px, 40px, 0);
+  }
+  70% {
+    clip: rect(5px, 9999px, 100px, 0);
+  }
+  80% {
+    clip: rect(25px, 9999px, 80px, 0);
+  }
+  90% {
+    clip: rect(15px, 9999px, 40px, 0);
+  }
+  100% {
+    clip: rect(10px, 9999px, 75px, 0);
+  }
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   CARDS: Bloom, Pulse, Hover Effects, Buttons
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Card image always full width, auto height */
+.mdl-card__media > img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Slight scaling and shadow on hover for images */
+.mdl-card__media:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* .mdl-card container styling (max-width so they display nicely in a grid) */
+section > .mdl-card {
+  max-width: 270px;
+  margin: 10px;
+  /* Additional transition for subtle “lift” effect on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative; /* For optional bloom effect below */
+}
+
+/* On hover, give each card a bigger drop shadow and a slight upward shift */
+section > .mdl-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Optional bloom effect around the card */
+section > .mdl-card:hover::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border-radius: 4px;
+  pointer-events: none;
+  background: radial-gradient(rgba(255, 255, 255, 0.25), transparent 80%);
+  opacity: 0;
+  animation: bloom 0.6s forwards;
+}
+
+@keyframes bloom {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle card “pulse” effect on hover (comment out if too flashy) */
+section > .mdl-card:hover {
+  animation: cardPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: translateY(-4px) scale(1);
+  }
+  100% {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+/* 
+   OPTIONAL: Slight 3D tilt effect on hover 
+   (If you really want more fancy, combine this with bloom/pulse).
+   Just add .tilt to your card markup:
+*/
+/*
+section > .mdl-card.tilt:hover {
+  transform: perspective(600px) rotateY(5deg) translateY(-4px);
+}
+*/
+
+/* Button at the bottom of each card */
+.mdl-card__actions > a.mdl-button {
+  color: #FF3D00;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  /* Add a ripple effect (MDL uses :after for ripple but we can add a glow) */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect on the button */
+.mdl-card__actions > a.mdl-button:hover,
+.mdl-card__actions > a.mdl-button:focus {
+  background-color: rgba(255, 61, 0, 0.1);
+  box-shadow: 0 0 8px rgba(255, 61, 0, 0.3);
+}
+
+/* “Press” effect on active click */
+.mdl-card__actions > a.mdl-button:active {
+  transform: scale(0.98);
+}
+
+/* Glow ring on focus (keyboard accessibility) */
+.mdl-card__actions > a.mdl-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 61, 0, 0.3);
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   CARD TEXT, SHIMMER HEADINGS, ETC.
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Cleanup lists within the card */
+.mdl-card__supporting-text > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.mdl-card__supporting-text > li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+}
+
+/* Adopter heading within the card */
+.mdl-card__supporting-text > h6 {
+  margin: 0 0 0px 0;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+  position: relative;
+  overflow: hidden;
+  /* Shimmer effect for text */
+  background: linear-gradient(to right, #FF6E40, #FF3D00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   BADGES & HEADER ICONS
+   ──────────────────────────────────────────────────────────────────
+*/
+
+/* Multi-step gradient for secondary badge */
+.mdl-badge.secondary[data-badge]:after {
+  background: linear-gradient(45deg, #7C4DFF, #FF4081);
+  color: #FFFFFF;
+  transition: background 0.5s ease;
+}
+
+.mdl-badge.secondary[data-badge]:hover:after {
+  background: linear-gradient(45deg, #FF4081, #7C4DFF);
+}
+
+/* Subtle 'swing' effect when badges are hovered */
+.mdl-layout__header .material-icons.mdl-badge:hover,
+.mdl-layout__header .secondary.material-icons.mdl-badge:hover {
+  animation: swingBadge 0.6s ease;
+}
+
+@keyframes swingBadge {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   ASIDE GRADIENT & ANIMATIONS
+   ──────────────────────────────────────────────────────────────────
+*/
+
+aside.mdl-grid {
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #455A64 0%, #546E7A 50%, #607D8B 100%);
+  color: #FFFFFF;
+  animation: asideFadeIn 1.2s ease forwards;
+  opacity: 0; /* so we can fade it in */
+}
+
+@keyframes asideFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle bounce for the aside heading text */
+aside h4 {
+  margin: 0px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 
+   ──────────────────────────────────────────────────────────────────
+   SCROLLBAR STYLING
+   ──────────────────────────────────────────────────────────────────
+*/
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #CFD8DC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B0BEC5;
+  border-radius: 4px;
+  border: 1px solid #ECEFF1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #90A4AE;
+}

@@ -1,0 +1,160 @@
+/* general text formatting */
+
+body {
+    font-family: "Roboto", Verdana, Arial, sans-serif;
+    font-size: 100%;
+    background-color: #ECEFF1;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+
+}
+
+section {
+    background-color: white;
+    margin: 1em 4em 1em 4em;
+    border: solid 1pt black;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    color: white;
+    padding: 0.75rem;
+    background-color: #263238;
+    margin: 0;
+    background: linear-gradient(to right, #263238, #607D8B);
+}
+
+.status {
+    border-radius: 0.25rem;
+    padding: 3px;
+    color: white;
+}
+
+.status-processing {
+    background-color: #E65100;
+}
+
+.status-shipped {
+    background-color: #4CAF50;
+}
+
+.status-pending {
+    background-color: #03A9F4;
+}
+
+
+
+/* table formatting */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table caption {
+    background-color: #607D8B;
+    color: white;
+}
+
+td,
+th {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+/* form formatting */
+
+legend {
+    background-color: #607D8B;
+    color: white;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+}
+
+input[type=submit] {
+    background-color: #673AB7;
+    color: white;
+    border-style: none;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+input[type=submit]:hover {
+    background-color: #6200EA;
+}
+
+/* match label width with your existing label style */
+label[for="notes"] {
+    /* ← added */
+    display: inline-block;
+    /* ← added */
+    width: 8rem;
+    /* ← added (adjust as needed) */
+    text-align: right;
+    /* ← added for alignment */
+    margin-right: 1rem;
+    /* ← added for spacing */
+}
+
+/* match textarea width/height with your other fields */
+#notes {
+    display: inline-block;
+    width: 16rem;
+    height: 5rem;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: 1rem;
+}
+
+/* Ensure both the reset and submit buttons share the same style */
+input[type="reset"],
+input[type="submit"] {
+    display: inline-block;
+    width: 6rem;
+    margin: 0.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #673AB7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* hover effect for reset button to match submit button’s style */
+input[type="reset"]:hover {
+    background-color: #6200EA;
+}
+
+/* table row hover transition is already in place, but you can refine its style */
+tbody tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+label,
+input,
+textarea,
+select {
+    margin-bottom: 0.5rem;
+}

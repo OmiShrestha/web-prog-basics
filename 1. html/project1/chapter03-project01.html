@@ -1,0 +1,147 @@
+<!-- Author: Omi Shrestha -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Share Your Travels -- New York - Central Park</title>
+
+   <style>
+	@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+	/* Apply fonts to specific elements */
+	body {
+		background-color: #fefae0; 
+		margin: 0; 
+		max-width: 1200px;
+		padding: 20px;
+	  }
+	h1 {
+		font-family: 'Montserrat', serif;
+		font-size: 2.5em;
+		color: #606c38;
+	  }
+	h2 {
+		font-family: 'Expletus Sans', serif;
+		font-size: 2em;
+		color: #606c38;
+	  }
+	h3 {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5em;
+		color: #606c38;
+	  }
+	p {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1em;
+		color: #2c3e50;
+	  }
+	nav a {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		color: #283618;
+		text-decoration: none;
+	  }
+	nav a:hover {
+		text-decoration: underline;
+	  }
+	footer p {
+		font-family: 'Pacifico', cursive;
+		font-size: 1em;
+		color: #7f8c8d;
+	}
+	.related-photos {
+	   display: flex;
+	   gap: 10px;
+	   margin: 15px 0;
+	}
+	.related-photos figure {
+	   margin: 0;
+	}
+	.image-enlarged {
+		
+	}
+	</style>
+</head>
+<body>
+<header>
+  <!-- 1) Add image to the <h1> heading -->
+  <h1>
+    <img src="images/logo.png" alt="Share Your Travels Logo" title="Share Your Travels" style="width: 30px; height: auto; vertical-align: middle;" />
+    Share Your Travels
+  </h1>
+  <h2>New York - Central Park</h2>
+  
+  <!-- 2) Convert list items to links referencing the ID attributes -->
+  <nav>
+    <ul>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul> 
+  </nav>
+</header>
+
+<main>
+   <section>
+     <h3 id="description"><u>Description</u></h3>
+     <p>Photo by Randy Connolly</p>
+     <p>
+       This photo of Conservatory Pond in 
+       <a href="http://www.centralpark.com/" target="_blank">Central Park </a> in
+       <a href="https://www.nyctourism.com" target="_blank">New York City</a> was 
+       taken on October 22, 2011 with a Canon EOS 30D camera.
+     </p>
+     <figure>
+       <a href="images/large-central-park.jpg" target="_blank">
+         <img src="images/central-park.jpg" alt="Central Park" title="Central Park"/>
+       </a>
+       <figcaption>A Conservatory Pond in Central Park</figcaption>
+     </figure>
+   </section>
+   
+   <section>
+     <h3 id="reviews"><u>Reviews</u></h3>
+     <div>
+       <p>By Ricardo on <time>2016-05-23</time></p>
+       <p>Easy on the HDR buddy.</p>
+     </div>
+     <hr/>
+     
+     <!-- 4) Additional Reviews -->
+     <div>
+       <p>By Johanna on <time>2017-01-10</time></p>
+       <p>I love the colors in this shot!</p>
+     </div>
+     <hr/>
+   </section>
+   
+   <!-- 3) Add a new section for related photos -->
+   <section>
+	<h3><em><u>Other Related Pictures</u></em></h3>
+	<div class="related-photos">
+	  <figure>
+		<a href="images/related-large1.jpg">
+		  <img src="images/related-square1.jpg" alt="Related Photo 1">
+		</a>
+	  </figure>
+	  <figure>
+		<a href="images/related-large2.jpg">
+		  <img src="images/related-square2.jpg" alt="Related Photo 2">
+		</a>
+	  </figure>
+	  <figure>
+		<a href="images/related-large3.jpg">
+		  <img src="images/related-square3.jpg" alt="Related Photo 3">
+		</a>
+	  </figure>
+	</div>
+	<p><em>Click on the images to enlarge them.</em></p>
+   </section>
+</main>
+
+<footer>
+  <p><em>Copyright &copy; 2017 Share Your Travels</em></p>
+</footer>
+</body>
+</html>
