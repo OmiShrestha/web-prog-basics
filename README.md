@@ -36,4 +36,3 @@ Feel free to explore each folder to see the code and structure used for each typ
 
 ### Author
 **Omi Shrestha**  
-*Aspiring developer exploring the web stack*
