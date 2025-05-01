@@ -20,19 +20,14 @@ This repository contains a collection of small projects created while learning v
 - Enhancing interactivity using JavaScript.
 - Projects may include DOM manipulation, event handling, and simple animations.
 
-### 5. PHP
-- Pure backend functionality using PHP.
+### 5. PHP & CSS
+- Pure backend functionality using PHP alongside CSS for frontend.
 - Could include logic such as form validation, file handling, or simple authentication.
+
+### 6. PHP, CSS & JS
+- Pure backend functionality using PHP and JS alongside CSS for frontend.
 
 ---
 
 ## Notes
-- `.DS_Store` is a macOS system file and can be ignored.
 - All projects are meant for learning purposes and demonstrate fundamental concepts in web programming.
-
-Feel free to explore each folder to see the code and structure used for each type of project!
-
----
-
-### Author
-**Omi Shrestha**  
